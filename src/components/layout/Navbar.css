@@ -1,0 +1,179 @@
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, #dc2626, #ff6b00);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.logo:hover {
+  color: #fef08a;
+  transform: scale(1.02);
+}
+
+/* Hamburger Button */
+.hamburger-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #ffffff;
+  transition: all 0.2s ease;
+  padding: 0.5rem 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1002;
+  border-radius: 8px;
+}
+
+.hamburger-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.02);
+}
+
+/* Overlay Background */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Side Menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100vh;
+  background: linear-gradient(135deg, #dc2626, #ff6b00);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1001;
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu.open {
+  right: 0;
+}
+
+/* Side Menu Header */
+.side-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.side-menu-header h2 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.close-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  font-size: 1.3rem;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Side Menu Links */
+.side-menu-links {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 1rem;
+}
+
+.side-menu-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.7rem 1rem;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.side-menu-links a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(5px);
+}
+
+.side-menu-links a.active-link {
+  background: rgba(255, 255, 255, 0.2);
+  border-left: 3px solid #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.7rem 1rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .hamburger-btn {
+    font-size: 1.3rem;
+    padding: 0.4rem 0.7rem;
+  }
+
+  .side-menu {
+    width: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .side-menu {
+    width: 100%;
+  }
+}

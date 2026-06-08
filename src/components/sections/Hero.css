@@ -1,0 +1,221 @@
+/* Hero Section */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 1rem 2rem 2rem;
+  background: linear-gradient(135deg, #dc2626, #ff6b00);
+}
+
+.hero-container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  min-height: 70vh;
+  margin: 0 auto;
+}
+
+/* ========== BACKGROUND TEXT ========== */
+.hero-background-text {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bg-text {
+  font-size: 5rem;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.08);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  white-space: nowrap;
+}
+
+/* ========== CENTER - PROFILE IMAGE ========== */
+.hero-center {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.profile-image {
+  width: 350px;
+  height: auto;
+  object-fit: cover;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+  position: relative;
+  z-index: 2;
+  border-radius: 20px;
+}
+
+/* ========== BOTTOM LEFT - Download Button ========== */
+.hero-bottom-left {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  z-index: 2;
+}
+
+.download-btn {
+  background: #ffffff;
+  color: #dc2626;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn:hover {
+  background: #fef08a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+}
+
+/* ========== BOTTOM RIGHT - About Me ========== */
+.hero-bottom-right {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  z-index: 2;
+  max-width: 380px;
+  text-align: right;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  border-right: 3px solid #ffffff;
+}
+
+.hero-bottom-right p {
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1200px) {
+  .bg-text {
+    font-size: 3.5rem;
+  }
+  
+  .profile-image {
+    width: 320px;
+  }
+}
+
+@media (max-width: 992px) {
+  .bg-text {
+    font-size: 2.5rem;
+    white-space: normal;
+    padding: 0 1rem;
+  }
+  
+  .profile-image {
+    width: 280px;
+  }
+  
+  .hero-bottom-right {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 1rem 1rem 2rem;
+  }
+  
+  .hero-container {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .hero-background-text {
+    display: none;
+  }
+  
+  .hero-center {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    text-align: center;
+    margin: 1rem 0 0.5rem;
+  }
+  
+  .profile-image {
+    width: 250px;
+  }
+  
+  .hero-bottom-left {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+  
+  .hero-bottom-right {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    text-align: center;
+    max-width: 100%;
+    margin: 0.5rem 0 1rem;
+  }
+  
+  .download-btn {
+    padding: 0.6rem 1.4rem;
+    font-size: 0.9rem;
+  }
+  
+  .hero-bottom-right p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-image {
+    width: 200px;
+  }
+  
+  .download-btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
+  }
+  
+  .btn-icon {
+    font-size: 1rem;
+  }
+  
+  .hero-bottom-right {
+    padding: 0.8rem 1rem;
+  }
+  
+  .hero-bottom-right p {
+    font-size: 0.85rem;
+  }
+}
