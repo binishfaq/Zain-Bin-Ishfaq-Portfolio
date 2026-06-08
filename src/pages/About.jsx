@@ -15,7 +15,7 @@ const About = () => {
           <div className="about-text">
             <h2>Who am I?</h2>
             <p>
-              I'm Binish Faq, a passionate <span className="highlight-text">MERN Stack Developer</span> dedicated to crafting 
+              I'm Zain Bin Ishfaq, a passionate <span className="highlight-text">MERN Stack Developer</span> dedicated to crafting 
               beautiful, functional, and user-friendly websites. With a keen eye for design 
               and a love for efficient code, I transform ideas into digital experiences that 
               make a difference.
