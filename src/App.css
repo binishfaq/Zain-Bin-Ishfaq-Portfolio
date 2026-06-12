@@ -1,28 +1,14 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #000000;
-  color: #ffffff;
-  line-height: 1.5;
-}
-
 .app-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
 }
 
 .main-content {
   flex: 1;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
   width: 100%;
+  padding: 0;
 }
 
 /* Scrollbar */
@@ -31,20 +17,20 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  background: #e8e0d5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ff6b00;
+  background: #082052;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #dc2626;
+  background: #0a2a6e;
 }
 
 /* Selection */
 ::selection {
-  background: #ff6b00;
-  color: #ffffff;
+  background: #082052;
+  color: #F8F0E5;
 }

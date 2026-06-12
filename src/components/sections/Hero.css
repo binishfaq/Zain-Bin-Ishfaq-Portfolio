@@ -1,57 +1,62 @@
-/* Hero Section */
+/* Hero Section - Dark Blue Background */
 .hero {
-  min-height: 90vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 1rem 2rem 2rem;
-  background: linear-gradient(135deg, #dc2626, #ff6b00);
+  padding: 0;
+  background: #082052;
+  width: 100%;
+  overflow: hidden;
 }
 
 .hero-container {
   position: relative;
   width: 100%;
-  max-width: 1400px;
-  min-height: 70vh;
+  max-width: 1200px;
+  min-height: 80vh;
   margin: 0 auto;
+  padding: 0 5%;
 }
 
-/* ========== BACKGROUND TEXT ========== */
+/* ========== BACKGROUND TEXT (Behind Image) ========== */
 .hero-background-text {
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
   text-align: center;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
 }
 
 .bg-text {
-  font-size: 5rem;
+  font-size: 3.5rem;
   font-weight: 800;
-  color: rgba(0, 0, 0, 0.08);
+  color: rgba(248, 240, 229, 0.15);
   text-transform: uppercase;
   letter-spacing: 4px;
   white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 /* ========== CENTER - PROFILE IMAGE ========== */
 .hero-center {
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
 }
 
 .profile-image {
-  width: 350px;
+  width: 320px;
   height: auto;
   object-fit: cover;
-  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.25));
   position: relative;
   z-index: 2;
   border-radius: 20px;
@@ -60,70 +65,61 @@
 /* ========== BOTTOM LEFT - Download Button ========== */
 .hero-bottom-left {
   position: absolute;
-  bottom: 5%;
+  bottom: 10%;
   left: 5%;
   z-index: 2;
 }
 
 .download-btn {
-  background: #ffffff;
-  color: #dc2626;
+  background: #F8F0E5;
+  color: #082052;
   border: none;
-  padding: 0.8rem 1.8rem;
+  padding: 0.7rem 1.5rem;
   border-radius: 40px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .download-btn:hover {
-  background: #fef08a;
+  background: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .btn-icon {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 /* ========== BOTTOM RIGHT - About Me ========== */
 .hero-bottom-right {
   position: absolute;
-  bottom: 5%;
+  bottom: 10%;
   right: 5%;
   z-index: 2;
-  max-width: 380px;
+  max-width: 350px;
   text-align: right;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(248, 240, 229, 0.95);
   backdrop-filter: blur(10px);
-  padding: 1rem 1.5rem;
+  padding: 0.8rem 1.2rem;
   border-radius: 12px;
-  border-right: 3px solid #ffffff;
+  border-right: 3px solid #F8F0E5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .hero-bottom-right p {
-  color: #ffffff;
-  font-size: 1rem;
-  line-height: 1.8;
+  color: #082052;
+  font-size: 0.9rem;
+  line-height: 1.6;
   margin: 0;
+  font-weight: 500;
 }
 
 /* ========== RESPONSIVE ========== */
-@media (max-width: 1200px) {
-  .bg-text {
-    font-size: 3.5rem;
-  }
-  
-  .profile-image {
-    width: 320px;
-  }
-}
-
 @media (max-width: 992px) {
   .bg-text {
     font-size: 2.5rem;
@@ -132,29 +128,45 @@
   }
   
   .profile-image {
-    width: 280px;
+    width: 260px;
   }
   
   .hero-bottom-right {
-    max-width: 320px;
+    max-width: 300px;
+  }
+  
+  .hero-bottom-right p {
+    font-size: 0.85rem;
   }
 }
 
 @media (max-width: 768px) {
   .hero {
     min-height: auto;
-    padding: 1rem 1rem 2rem;
+    padding: 2rem 0;
   }
   
   .hero-container {
     min-height: auto;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
+    position: relative;
+    padding: 0 5%;
+  }
+  
+  .bg-text {
+    font-size: 1.8rem;
+    white-space: normal;
+    padding: 0 1rem;
   }
   
   .hero-background-text {
-    display: none;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-bottom: 1rem;
   }
   
   .hero-center {
@@ -163,11 +175,11 @@
     left: auto;
     transform: none;
     text-align: center;
-    margin: 1rem 0 0.5rem;
+    margin: 0;
   }
   
   .profile-image {
-    width: 250px;
+    width: 220px;
   }
   
   .hero-bottom-left {
@@ -188,34 +200,41 @@
   }
   
   .download-btn {
-    padding: 0.6rem 1.4rem;
-    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
+    margin: 0 auto;
   }
   
   .hero-bottom-right p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    text-align: center;
   }
 }
 
 @media (max-width: 480px) {
+  .bg-text {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+  }
+  
   .profile-image {
-    width: 200px;
+    width: 180px;
   }
   
   .download-btn {
-    padding: 0.5rem 1.2rem;
-    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
   }
   
   .btn-icon {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   
   .hero-bottom-right {
-    padding: 0.8rem 1rem;
+    padding: 0.6rem 1rem;
   }
   
   .hero-bottom-right p {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 }

@@ -4,13 +4,11 @@ import './Hero.css';
 import heroImage from '../../assets/hero.png';
 
 const Hero = () => {
-  // Function to handle resume download
   const handleDownloadResume = () => {
-    // Replace with your actual resume file path
-    const resumeUrl = '/Zain_Bin_Ishfaq_Resume.pdf'; // Place your resume file in public folder
+    const resumeUrl = '/resume.pdf';
     const link = document.createElement('a');
     link.href = resumeUrl;
-    link.download = 'Zain_Bin_Ishfaq_Resume.pdf';
+    link.download = 'Binish_Faq_Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -19,7 +17,7 @@ const Hero = () => {
   return (
     <section className="hero">
       <div className="hero-container">
-
+        
         {/* Background Text - Behind Image */}
         <div className="hero-background-text">
           <h1 className="bg-text">MERN Stack Developer</h1>
@@ -27,10 +25,10 @@ const Hero = () => {
 
         {/* Center - Profile Image */}
         <div className="hero-center">
-          <img src={heroImage} alt="Zain Bin Ishfaq" className="profile-image" />
+          <img src={heroImage} alt="Binish Faq" className="profile-image" />
         </div>
 
-        {/* Bottom Left - Download Resume Button with Icon */}
+        {/* Bottom Left - Download Resume Button */}
         <div className="hero-bottom-left">
           <button className="download-btn" onClick={handleDownloadResume}>
             <CiSaveDown1 className="btn-icon" />
@@ -41,8 +39,8 @@ const Hero = () => {
         {/* Bottom Right - About Me */}
         <div className="hero-bottom-right">
           <p>
-            I'm a passionate MERN Stack Developer with a keen eye for design
-            and a love for efficient code. I craft beautiful, responsive
+            I'm a passionate MERN Stack Developer with a keen eye for design 
+            and a love for efficient code. I craft beautiful, responsive 
             websites that solve real problems.
           </p>
         </div>

@@ -1,16 +1,18 @@
-/* Project Card - With Real Images */
+/* Project Card */
 .project-card {
-  background: #0a0a0a;
+  background: #F8F0E5;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid #1a1a1a;
+  border: 1px solid rgba(8, 32, 82, 0.2);
   transition: all 0.25s ease;
   cursor: pointer;
+  box-shadow: 0 2px 8px rgba(8, 32, 82, 0.05);
 }
 
 .project-card:hover {
-  border-color: #ff6b00;
+  border-color: #082052;
   transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(8, 32, 82, 0.12);
 }
 
 /* Card Image */
@@ -18,6 +20,7 @@
   width: 100%;
   height: 180px;
   overflow: hidden;
+  background: #082052;
 }
 
 .project-image {
@@ -31,25 +34,37 @@
   transform: scale(1.05);
 }
 
+.card-image .image-placeholder,
+.card-image .image-icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background: #082052;
+  color: #F8F0E5;
+}
+
 /* Card Content */
 .card-content {
   padding: 1.2rem;
 }
 
 .project-title {
-  color: #ffffff;
+  color: #082052;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 0.6rem;
   line-height: 1.4;
 }
 
 .project-card:hover .project-title {
-  color: #ff6b00;
+  color: #0a2a6e;
 }
 
 .project-description {
-  color: #888888;
+  color: #555;
   font-size: 0.8rem;
   line-height: 1.5;
   margin-bottom: 1rem;
@@ -64,8 +79,8 @@
 }
 
 .tech-badge {
-  background: #141414;
-  color: #aaaaaa;
+  background: rgba(8, 32, 82, 0.1);
+  color: #082052;
   padding: 0.2rem 0.6rem;
   border-radius: 6px;
   font-size: 0.65rem;
@@ -74,13 +89,11 @@
 }
 
 .tech-badge:hover {
-  background: rgba(255, 107, 0, 0.15);
-  color: #ff8c33;
+  background: rgba(8, 32, 82, 0.2);
 }
 
 .tech-badge.more {
-  background: rgba(255, 107, 0, 0.1);
-  color: #ff6b00;
+  background: rgba(8, 32, 82, 0.15);
 }
 
 /* GitHub Link */
@@ -88,10 +101,10 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: #ff6b00;
+  color: #082052;
   text-decoration: none;
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   transition: all 0.2s ease;
 }
 
@@ -101,7 +114,7 @@
 
 .github-link:hover {
   gap: 0.6rem;
-  color: #ff8c33;
+  color: #0a2a6e;
 }
 
 .github-link:hover .link-arrow {
