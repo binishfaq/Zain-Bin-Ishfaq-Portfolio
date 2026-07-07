@@ -1,39 +1,60 @@
-
+/* ========================================
+   NAVBAR CONTAINER
+   ======================================== */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.8rem 2rem;
-  background: #ffff;
+  background: white;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 2px solid #082052;
-  width: 100%;
-  margin: 0;
+  border-bottom: 1px solid rgba(8, 32, 82, 0.08);
 }
 
-/* Logo */
+/* ========================================
+   LOGO
+   ======================================== */
 .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
   text-decoration: none;
-  color: #082052;
-  transition: all 0.2s ease;
 }
 
-.logo:hover {
+.logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: #082052;
+  border-radius: 8px;
+  color: #ffff;
+}
+
+.logo-text {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #082052;
+  letter-spacing: -0.3px;
+}
+
+.logo:hover .logo-text {
   color: #0a2a6e;
 }
 
-/* Hamburger Button */
+/* ========================================
+   HAMBURGER BUTTON
+   ======================================== */
 .hamburger-btn {
   background: #082052;
   border: none;
   cursor: pointer;
-  font-size: 1.5rem;
   color: #ffff;
-  transition: all 0.2s ease;
   padding: 0.5rem 0.8rem;
   display: flex;
   align-items: center;
@@ -46,17 +67,20 @@
   background: #0a2a6e;
 }
 
-/* Overlay Background */
+/* ========================================
+   OVERLAY
+   ======================================== */
 .menu-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(8, 32, 82, 0.9);
+  background: rgba(8, 32, 82, 0.6);
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   z-index: 1000;
-  animation: fadeIn 0.2s ease;
+  animation: fadeIn 0.25s ease;
 }
 
 @keyframes fadeIn {
@@ -64,138 +88,251 @@
   to { opacity: 1; }
 }
 
-/* ========== SIDE MENU ========== */
+/* ========================================
+   SIDE MENU
+   ======================================== */
 .side-menu {
   position: fixed;
   top: 0;
-  right: -340px;
+  right: -360px;
   width: 320px;
   height: 100vh;
   background: #ffff;
-  border-left: 2px solid #082052;
   z-index: 1001;
-  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: right 0.3s ease;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  box-shadow: -10px 0 30px rgba(8, 32, 82, 0.15);
+  box-shadow: -4px 0 20px rgba(8, 32, 82, 0.1);
 }
 
 .side-menu.open {
   right: 0;
 }
 
-/* ========== PROFILE SECTION ========== */
+/* ========================================
+   PROFILE SECTION WITH IMAGE
+   ======================================== */
 .side-menu-profile {
   text-align: center;
-  padding: 2rem 1.5rem 1.5rem;
-  border-bottom: 1px solid rgba(8, 32, 82, 0.1);
-  background: linear-gradient(135deg, rgba(8, 32, 82, 0.05), rgba(8, 32, 82, 0.02));
+  padding: 2rem 1.5rem 1.8rem;
+  background: linear-gradient(135deg, #082052 0%, #0a2a6e 100%);
+  position: relative;
+  overflow: hidden;
 }
 
-.profile-avatar {
-  width: 64px;
-  height: 64px;
+.side-menu-profile::after {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -30%;
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.03);
   border-radius: 50%;
-  background: linear-gradient(135deg, #082052, #0a2a6e);
-  color: #ffff;
-  font-size: 1.8rem;
-  font-weight: 700;
+  pointer-events: none;
+}
+
+/* Profile Avatar Wrapper */
+.profile-avatar-wrapper {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 0.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 0.8rem;
-  box-shadow: 0 4px 12px rgba(8, 32, 82, 0.25);
 }
 
+/* Profile Image */
+.profile-avatar-img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(248, 240, 229, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+/* Decorative Ring */
+.profile-avatar-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #ffff, rgba(248, 240, 229, 0.2)) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 0;
+  animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Profile Info */
 .profile-name {
-  color: #082052;
+  color: #ffff;
   font-size: 1.2rem;
   font-weight: 700;
   margin: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .profile-role {
-  color: #666;
+  color: rgba(248, 240, 229, 0.6);
   font-size: 0.85rem;
-  margin: 0.2rem 0 0;
+  margin: 0.15rem 0 0.8rem;
+  position: relative;
+  z-index: 1;
 }
 
-/* ========== NAVIGATION LINKS ========== */
+.profile-badge {
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  background: rgba(248, 240, 229, 0.12);
+  color: #ffff;
+  font-size: 0.65rem;
+  font-weight: 600;
+  border-radius: 20px;
+  border: 1px solid rgba(248, 240, 229, 0.15);
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.5px;
+}
+
+/* ========================================
+   NAVIGATION LINKS
+   ======================================== */
 .side-menu-links {
   display: flex;
   flex-direction: column;
   padding: 1.5rem 1rem;
-  gap: 0.5rem;
+  gap: 0.3rem;
   flex: 1;
 }
 
-.side-menu-links a {
+.nav-link {
   text-decoration: none;
   color: #082052;
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 500;
-  padding: 0.8rem 1.2rem;
-  transition: all 0.25s ease;
-  border-radius: 10px;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
-.side-menu-links a:hover {
+.nav-link:hover {
+  background: rgba(8, 32, 82, 0.06);
+}
+
+.link-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
   background: rgba(8, 32, 82, 0.08);
-  transform: translateX(4px);
-}
-
-.side-menu-links a.active-link {
-  background: rgba(8, 32, 82, 0.12);
   color: #082052;
-  border-left: 3px solid #082052;
-}
-
-.side-menu-links a svg {
   flex-shrink: 0;
-  color: #082052;
-  opacity: 0.7;
 }
 
-.side-menu-links a:hover svg,
-.side-menu-links a.active-link svg {
-  opacity: 1;
+.nav-link:hover .link-icon {
+  background: rgba(8, 32, 82, 0.12);
 }
 
-/* ========== FOOTER ========== */
+/* Active Link */
+.nav-link.active-link {
+  background: rgba(8, 32, 82, 0.08);
+  border-right: 2px solid #082052;
+}
+
+.nav-link.active-link .link-icon {
+  background: #082052;
+  color: #ffff;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
 .side-menu-footer {
-  padding: 1.5rem;
+  padding: 1.2rem;
   text-align: center;
-  border-top: 1px solid rgba(8, 32, 82, 0.08);
+  border-top: 1px solid rgba(8, 32, 82, 0.06);
 }
 
 .side-menu-footer p {
-  color: #999;
-  font-size: 0.75rem;
+  color: #aaa;
+  font-size: 0.7rem;
   margin: 0;
 }
 
-/* ========== RESPONSIVE ========== */
+/* ========================================
+   RESPONSIVE
+   ======================================== */
 @media (max-width: 768px) {
   .navbar {
     padding: 0.7rem 1rem;
   }
 
-  .logo {
-    font-size: 1.2rem;
+  .logo-text {
+    font-size: 1rem;
+  }
+
+  .logo-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .logo-icon svg {
+    width: 18px;
+    height: 18px;
   }
 
   .hamburger-btn {
-    font-size: 1.3rem;
     padding: 0.4rem 0.7rem;
   }
 
   .side-menu {
     width: 280px;
     right: -300px;
+  }
+
+  .profile-avatar-wrapper {
+    width: 68px;
+    height: 68px;
+  }
+
+  .profile-avatar-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .profile-name {
+    font-size: 1.1rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .link-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .link-icon svg {
+    width: 16px;
+    height: 16px;
   }
 }
 
@@ -209,13 +346,17 @@
     right: -100%;
   }
 
-  .profile-avatar {
-    width: 56px;
-    height: 56px;
-    font-size: 1.5rem;
+  .logo-text {
+    font-size: 0.85rem;
   }
 
-  .profile-name {
-    font-size: 1.1rem;
+  .profile-avatar-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  .profile-avatar-img {
+    width: 54px;
+    height: 54px;
   }
 }
