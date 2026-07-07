@@ -1,22 +1,58 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-}
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #F8F0E5;
-  color: #1a1a1a;
-  line-height: 1.5;
-}
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
 
-#root {
-  width: 100%;
-  min-height: 100vh;
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #ffff;
+    color: #1a1a1a;
+    line-height: 1.5;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  /* ===== SCROLLBAR ===== */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #082052;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #0a2a6e;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #1a3a8e;
+  }
+
+  /* ===== SELECTION ===== */
+  ::selection {
+    background: #082052;
+    color: #ffff;
+  }
+
+  /* ===== FOCUS RING ===== */
+  *:focus-visible {
+    outline: 2px solid #082052;
+    outline-offset: 2px;
+  }
 }

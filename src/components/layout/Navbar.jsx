@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { X } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -19,20 +20,13 @@ const Navbar = () => {
       <NavLink to="/" className="logo" onClick={closeMenu}>
         Zain Bin Ishfaq
       </NavLink>
-
       <button className="hamburger-btn" onClick={toggleMenu}>
-        <GiHamburgerMenu />
+        {isMenuOpen ? <X size={24} /> : <GiHamburgerMenu />}
       </button>
 
-      {/* Overlay background when menu is open */}
       {isMenuOpen && <div className="menu-overlay" onClick={closeMenu}></div>}
       
-      {/* Side menu that slides from right */}
       <div className={`side-menu ${isMenuOpen ? 'open' : ''}`}>
-        <div className="side-menu-header">
-          <h2>Menu</h2>
-          <button className="close-btn" onClick={closeMenu}></button>
-        </div>
         
         <div className="side-menu-links">
           <NavLink to="/" className={({ isActive }) => isActive ? 'active-link' : ''} onClick={closeMenu}>
@@ -42,7 +36,7 @@ const Navbar = () => {
             About
           </NavLink>
           <NavLink to="/projects" className={({ isActive }) => isActive ? 'active-link' : ''} onClick={closeMenu}>
-            Project
+            Projects
           </NavLink>
           <NavLink to="/contact" className={({ isActive }) => isActive ? 'active-link' : ''} onClick={closeMenu}>
             Contact

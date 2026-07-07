@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Projects from './pages/Projects';
+import ProjectDetails from './pages/ProjectDetails';
 import AppLayout from './components/layout/AppLayout';
 import ErrPage from './pages/ErrPage';
 
@@ -24,6 +25,10 @@ const App = () => {
         {
           path: '/projects',
           element: <Projects />
+        },
+        {
+          path: '/projects/:id',
+          element: <ProjectDetails />
         },
         {
           path: '/contact',

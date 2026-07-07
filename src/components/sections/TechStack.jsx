@@ -2,7 +2,6 @@ import React from 'react';
 import { FaReact, FaNode, FaHtml5, FaCss3Alt, FaGithub } from "react-icons/fa";
 import { TbBrandJavascript } from "react-icons/tb";
 import { SiMongodb, SiExpress, SiMysql } from "react-icons/si";
-import './TechStack.css';
 
 const TechStack = () => {
   const technologies = [
@@ -18,19 +17,19 @@ const TechStack = () => {
   ];
 
   return (
-    <div className="tech-stack-section">
-      <div className="tech-stack-header">
-        <h2>My Tech Stack</h2>
-        <p>Technologies I work with</p>
+    <div className="mt-8 p-4 sm:p-6 md:p-8 bg-[#ffff] rounded-2xl border border-[#082052]/20">
+      <div className="text-center mb-6 md:mb-8">
+        <h2 className="text-[#082052] text-2xl md:text-3xl font-bold mb-2">My Tech Stack</h2>
+        <p className="text-[#666] text-sm md:text-base">Technologies I work with</p>
       </div>
 
-      <div className="tech-icons-grid">
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 md:gap-6 text-center">
         {technologies.map((tech, index) => (
-          <div key={index} className="tech-icon-card">
-            <div className="tech-icon" style={{ color: tech.color }}>
+          <div key={index} className="flex flex-col items-center gap-2 p-3 rounded-xl transition-all duration-200 hover:-translate-y-1 hover:bg-[#082052]/5">
+            <div className="text-3xl sm:text-4xl md:text-5xl transition-transform duration-200 hover:scale-105" style={{ color: tech.color }}>
               {tech.icon}
             </div>
-            <span className="tech-name">{tech.name}</span>
+            <span className="text-[#082052] text-xs sm:text-sm font-medium">{tech.name}</span>
           </div>
         ))}
       </div>
