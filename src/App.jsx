@@ -7,6 +7,8 @@ import ProjectDetails from './pages/ProjectDetails';
 import AppLayout from './components/layout/AppLayout';
 import ErrPage from './pages/ErrPage';
 
+
+
 const App = () => {
   const router = createBrowserRouter([
     {

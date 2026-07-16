@@ -102,16 +102,9 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="flex flex-col sm:flex-row items-center justify-between pt-6 gap-2">
-          <p className="text-blue-200/40 text-sm">
+          <p className="text-blue-200/40 text-sm align-center sm:align-left">
             © {currentYear} Zain Bin Ishfaq. All rights reserved.
           </p>
-          <div className="flex items-center gap-4 text-xs text-blue-200/30">
-            <span>Built with ❤️</span>
-            <span className="w-1 h-1 bg-blue-200/20 rounded-full"></span>
-            <span>React + Tailwind CSS</span>
-            <span className="w-1 h-1 bg-blue-200/20 rounded-full"></span>
-            <span>v1.0.0</span>
-          </div>
         </div>
       </div>
     </footer>

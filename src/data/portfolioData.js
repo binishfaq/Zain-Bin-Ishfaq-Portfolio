@@ -3,6 +3,7 @@ import ecommerceImg from '../assets/projects/ecommerce.png';
 import loginImg from '../assets/projects/login.png';
 import internshipImg from '../assets/projects/decodelab.png';
 import devblogImg from '../assets/projects/devblog.png';
+import urlShortenerImg from '../assets/projects/url.png'; // ← Add your image
 
 // Projects data
 export const projectsData = [
@@ -86,6 +87,59 @@ export const projectsData = [
   },
   {
     id: 3,
+    title: "URL Shortener – Full Stack Application",
+    description: "A complete URL shortening service built with the MERN stack. Shorten long URLs, track clicks, and manage your links with a beautiful modern interface.",
+    extendedDescription: `
+      <h2>Project Overview</h2>
+      <p>A full-stack URL shortener application that converts long URLs into short, shareable links. Built with the MERN stack and features a clean, modern interface with real-time click tracking.</p>
+      
+      <h2>Key Features</h2>
+      <ul>
+        <li><strong>Create Short URLs:</strong> Convert long URLs into short, unique codes</li>
+        <li><strong>Redirect to Original:</strong> Instantly redirect users to the original URL</li>
+        <li><strong>Track Clicks:</strong> Every visit is counted automatically</li>
+        <li><strong>Delete URLs:</strong> Remove unwanted short links from the database</li>
+        <li><strong>Copy to Clipboard:</strong> One-click copy functionality</li>
+        <li><strong>URL Management:</strong> View all your shortened URLs with stats</li>
+      </ul>
+
+      <h2>Tech Stack</h2>
+      <ul>
+        <li><strong>Frontend:</strong> React 18, Vite, React Icons, React Toastify, CSS</li>
+        <li><strong>Backend:</strong> Node.js, Express.js, nanoid, CORS</li>
+        <li><strong>Database:</strong> MongoDB Atlas with Mongoose ODM</li>
+        <li><strong>API Testing:</strong> Postman</li>
+      </ul>
+
+      <h2>API Endpoints</h2>
+      <ul>
+        <li><strong>POST /testurl:</strong> Create short URL from long URL</li>
+        <li><strong>GET /:code:</strong> Redirect to original URL</li>
+        <li><strong>DELETE /:code:</strong> Delete a short URL</li>
+      </ul>
+
+      <h2>What I Learned</h2>
+      <ul>
+        <li>Building RESTful APIs with Express.js</li>
+        <li>MongoDB schema design with Mongoose</li>
+        <li>Full CRUD operations in a real-world project</li>
+        <li>Deploying frontend and backend together</li>
+        <li>State management in React with custom hooks</li>
+        <li>API integration between frontend and backend</li>
+        <li>Implementing click tracking and analytics</li>
+      </ul>
+
+      <h2>Live Demo</h2>
+      <p>Frontend: http://localhost:5173</p>
+      <p>Backend: http://localhost:5000</p>
+    `,
+    image: urlShortenerImg,
+    githubLink: "https://github.com/binishfaq/ShorternerUrl",
+    liveLink: "https://your-demo-url.com", // Add your live link if deployed
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Vite", "Axios", "CSS"]
+  },
+  {
+    id: 4,
     title: "Employee Management System",
     description: "Professional projects and assignments completed during internship at DeCodesLab.",
     extendedDescription: `
@@ -113,7 +167,7 @@ export const projectsData = [
     technologies: ["JavaScript", "React.js"]
   },
   {
-    id: 4,
+    id: 5,
     title: "Login System",
     description: "Secure authentication system with user registration, login, password reset, and session management.",
     extendedDescription: `
