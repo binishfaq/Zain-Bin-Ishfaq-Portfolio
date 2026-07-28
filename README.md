@@ -6,7 +6,7 @@ A modern, responsive portfolio website showcasing my skills, projects, and exper
 
 ## 🌐 Live Demo
 
-- **Portfolio:**  [ https://zainbinishfaq.vercel.app]
+- **Portfolio:**  https://zainbinishfaq.vercel.app
 
 ## ✨ Features
 
