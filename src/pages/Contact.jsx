@@ -1,151 +1,290 @@
-import React, { useState, useRef } from 'react';
-import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+import React, { useState, useRef } from "react";
+import {
+  FaGithub,
+  FaLinkedinIn,
+  FaPaperPlane,
+} from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const form = useRef();
-  const [status, setStatus] = useState('');
+
+  const [status, setStatus] = useState("");
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setStatus('sending');
 
-    emailjs.sendForm(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      form.current,
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    )
+    setStatus("sending");
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
       .then(() => {
-        setStatus('success');
+        setStatus("success");
         form.current.reset();
-        setTimeout(() => setStatus(''), 3000);
+
+        setTimeout(() => {
+          setStatus("");
+        }, 3000);
       })
-      .catch((error) => {
-        console.error('EmailJS error:', error);
-        setStatus('error');
-        setTimeout(() => setStatus(''), 3000);
+      .catch(() => {
+        setStatus("error");
+
+        setTimeout(() => {
+          setStatus("");
+        }, 3000);
       });
   };
 
   return (
-    <div className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 min-h-[70vh] bg-[#ffff]">
-      <div className="text-center mb-8 md:mb-12">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#082052] to-[#0a2a6e] bg-clip-text text-transparent">
-          Contact Me
-        </h1>
-        <p className="text-[#666] text-sm sm:text-base mt-2">Let's work together</p>
-      </div>
+    <section
+      id="contact"
+      className="bg-[#0B1220] py-24 px-6"
+    >
+      <div className="max-w-7xl mx-auto">
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 bg-[#ffff] rounded-2xl p-4 sm:p-6 md:p-10 border border-[#082052]/20">
-        {/* Contact Info */}
-        <div>
-          <h3 className="text-[#082052] text-xl sm:text-2xl font-bold mb-3">Get in Touch</h3>
-          <p className="text-[#555] text-sm sm:text-base leading-relaxed mb-6">
-            I'm always open to discussing new projects, creative ideas,
-            or opportunities to be part of your visions.
+        {/* Heading */}
+
+        <div className="text-center mb-16">
+
+          <span className="uppercase tracking-[6px] text-amber-400 font-semibold">
+            Contact
+          </span>
+
+          <h2 className="text-4xl md:text-5xl font-bold text-white mt-4">
+            Let's Build Something Amazing
+          </h2>
+
+          <p className="text-slate-400 max-w-2xl mx-auto mt-5 leading-8">
+            Whether you're looking for a developer,
+            have a freelance opportunity,
+            or simply want to say hello,
+            I'd love to hear from you.
           </p>
 
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-3 sm:gap-4 justify-center sm:justify-start">
-              <div className="text-2xl sm:text-3xl min-w-[40px] sm:min-w-[50px] text-[#082052] flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                <MdEmail />
-              </div>
-              <div>
-                <h4 className="text-[#0a2a6e] text-sm sm:text-base font-semibold">Email</h4>
-                <a href="mailto:zainbinishfaq@gmail.com" className="text-[#555] no-underline text-sm sm:text-base hover:text-[#082052] transition-colors duration-300">
-                  zainbinishfaq@gmail.com
-                </a>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 sm:gap-4 justify-center sm:justify-start">
-              <div className="text-2xl sm:text-3xl min-w-[40px] sm:min-w-[50px] text-[#082052] flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                <FaGithub />
-              </div>
-              <div>
-                <h4 className="text-[#0a2a6e] text-sm sm:text-base font-semibold">GitHub</h4>
-                <a href="https://github.com/binishfaq" target="_blank" rel="noopener noreferrer" className="text-[#555] no-underline text-sm sm:text-base hover:text-[#082052] transition-colors duration-300">
-                  github.com/binishfaq
-                </a>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 sm:gap-4 justify-center sm:justify-start">
-              <div className="text-2xl sm:text-3xl min-w-[40px] sm:min-w-[50px] text-[#082052] flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                <FaLinkedinIn />
-              </div>
-              <div>
-                <h4 className="text-[#0a2a6e] text-sm sm:text-base font-semibold">LinkedIn</h4>
-                <a href="https://linkedin.com/in/zainbinishfaq" target="_blank" rel="noopener noreferrer" className="text-[#555] no-underline text-sm sm:text-base hover:text-[#082052] transition-colors duration-300">
-                  linkedin.com/in/zainbinishfaq
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
 
-        {/* Contact Form */}
-        <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-4">
-          <div className="flex flex-col gap-1.5">
-            <label htmlFor="name" className="text-[#082052] text-sm font-medium">Your Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              placeholder="Enter your name"
-              className="bg-[#ffff] border border-[#082052]/30 rounded-lg px-3 sm:px-4 py-2.5 text-[#333] text-sm sm:text-base transition-all duration-300 focus:outline-none focus:border-[#082052] focus:bg-[#082052]/2 placeholder:text-[#999]"
-            />
-          </div>
+        <div className="grid lg:grid-cols-2 gap-10">
 
-          <div className="flex flex-col gap-1.5">
-            <label htmlFor="email" className="text-[#082052] text-sm font-medium">Email Address</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              placeholder="Enter your email"
-              className="bg-[#ffff] border border-[#082052]/30 rounded-lg px-3 sm:px-4 py-2.5 text-[#333] text-sm sm:text-base transition-all duration-300 focus:outline-none focus:border-[#082052] focus:bg-[#082052]/2 placeholder:text-[#999]"
-            />
-          </div>
+          {/* LEFT */}
 
-          <div className="flex flex-col gap-1.5">
-            <label htmlFor="message" className="text-[#082052] text-sm font-medium">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              rows="5"
-              placeholder="Tell me about your project..."
-              className="bg-[#ffff] border border-[#082052]/30 rounded-lg px-3 sm:px-4 py-2.5 text-[#333] text-sm sm:text-base transition-all duration-300 focus:outline-none focus:border-[#082052] focus:bg-[#082052]/2 placeholder:text-[#999] resize-none font-inherit"
-            ></textarea>
-          </div>
+          <div className="space-y-6">
 
-          <button
-            type="submit"
-            disabled={status === 'sending'}
-            className="bg-gradient-to-r from-[#082052] to-[#0a2a6e] text-[#ffff] border-none px-6 py-3 rounded-lg text-sm sm:text-base font-semibold cursor-pointer transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_5px_15px_rgba(8,32,82,0.3)] disabled:opacity-60 disabled:cursor-not-allowed"
-          >
-            {status === 'sending' ? 'Sending...' : 'Send Message →'}
-          </button>
+            <div className="bg-[#111827] border border-slate-700 rounded-3xl p-8">
 
-          {status === 'success' && (
-            <div className="bg-[#082052]/10 border border-[#082052] text-[#082052] px-4 py-3 rounded-lg text-center text-sm">
-              ✓ Message sent successfully! I'll get back to you soon.
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Get In Touch
+              </h3>
+
+              <p className="text-slate-400 leading-7">
+                I'm currently available for internships,
+                freelance work, collaborations,
+                and exciting MERN Stack projects.
+              </p>
+
             </div>
-          )}
 
-          {status === 'error' && (
-            <div className="bg-red-100/10 border border-red-600 text-red-600 px-4 py-3 rounded-lg text-center text-sm">
-              ✗ Failed to send message. Please try again.
+            {/* Email */}
+
+            <a
+              href="mailto:zainbinishfaq@gmail.com"
+              className="flex items-center gap-5 bg-[#111827] border border-slate-700 rounded-2xl p-5 hover:border-amber-400 transition"
+            >
+              <div className="w-14 h-14 rounded-xl bg-amber-400 flex items-center justify-center text-black text-xl">
+                <MdEmail />
+              </div>
+
+              <div>
+
+                <h4 className="text-white font-semibold">
+                  Email
+                </h4>
+
+                <p className="text-slate-400 text-sm">
+                  zainbinishfaq@gmail.com
+                </p>
+
+              </div>
+
+            </a>
+
+            {/* Github */}
+
+            <a
+              href="https://github.com/binishfaq"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-5 bg-[#111827] border border-slate-700 rounded-2xl p-5 hover:border-amber-400 transition"
+            >
+              <div className="w-14 h-14 rounded-xl bg-white flex items-center justify-center text-black text-xl">
+                <FaGithub />
+              </div>
+
+              <div>
+
+                <h4 className="text-white font-semibold">
+                  GitHub
+                </h4>
+
+                <p className="text-slate-400 text-sm">
+                  github.com/binishfaq
+                </p>
+
+              </div>
+
+            </a>
+
+            {/* LinkedIn */}
+
+            <a
+              href="https://linkedin.com/in/zainbinishfaq"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-5 bg-[#111827] border border-slate-700 rounded-2xl p-5 hover:border-amber-400 transition"
+            >
+              <div className="w-14 h-14 rounded-xl bg-[#0A66C2] flex items-center justify-center text-white text-xl">
+                <FaLinkedinIn />
+              </div>
+
+              <div>
+
+                <h4 className="text-white font-semibold">
+                  LinkedIn
+                </h4>
+
+                <p className="text-slate-400 text-sm">
+                  linkedin.com/in/zainbinishfaq
+                </p>
+
+              </div>
+
+            </a>
+
+            <div className="bg-[#111827] border border-emerald-500/40 rounded-2xl p-5">
+
+              <h4 className="text-emerald-400 font-semibold mb-2">
+                ✔ Available for Work
+              </h4>
+
+              <p className="text-slate-400 text-sm leading-6">
+                Open for internships,
+                freelance projects,
+                and full-stack web development opportunities.
+              </p>
+
             </div>
-          )}
-        </form>
+
+          </div>
+
+          {/* RIGHT */}
+
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className="bg-[#111827] border border-slate-700 rounded-3xl p-8 space-y-5">
+
+                      {/* Name */}
+
+            <div>
+              <label className="block text-sm font-medium text-slate-300 mb-2">
+                Full Name
+              </label>
+
+              <input
+                type="text"
+                name="name"
+                required
+                placeholder="John Doe"
+                className="w-full bg-[#0B1220] border border-slate-700 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-amber-400 transition"
+              />
+            </div>
+
+            {/* Email */}
+
+            <div>
+              <label className="block text-sm font-medium text-slate-300 mb-2">
+                Email Address
+              </label>
+
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="john@example.com"
+                className="w-full bg-[#0B1220] border border-slate-700 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-amber-400 transition"
+              />
+            </div>
+
+            {/* Subject */}
+
+            <div>
+              <label className="block text-sm font-medium text-slate-300 mb-2">
+                Subject
+              </label>
+
+              <input
+                type="text"
+                name="subject"
+                placeholder="Project Discussion"
+                className="w-full bg-[#0B1220] border border-slate-700 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-amber-400 transition"
+              />
+            </div>
+
+            {/* Message */}
+
+            <div>
+              <label className="block text-sm font-medium text-slate-300 mb-2">
+                Message
+              </label>
+
+              <textarea
+                name="message"
+                rows="6"
+                required
+                placeholder="Tell me about your project..."
+                className="w-full resize-none bg-[#0B1220] border border-slate-700 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-amber-400 transition"
+              ></textarea>
+            </div>
+
+            {/* Button */}
+
+            <button
+              type="submit"
+              disabled={status === "sending"}
+              className="w-full flex items-center justify-center gap-3 bg-amber-400 hover:bg-amber-300 text-black font-semibold py-3 rounded-xl transition duration-300 disabled:opacity-60"
+            >
+              <FaPaperPlane />
+
+              {status === "sending"
+                ? "Sending..."
+                : "Send Message"}
+            </button>
+
+            {/* Success */}
+
+            {status === "success" && (
+              <div className="rounded-xl border border-green-500 bg-green-500/10 p-4 text-green-400 text-center">
+                ✅ Your message has been sent successfully.
+              </div>
+            )}
+
+            {/* Error */}
+
+            {status === "error" && (
+              <div className="rounded-xl border border-red-500 bg-red-500/10 p-4 text-red-400 text-center">
+                ❌ Something went wrong. Please try again.
+              </div>
+            )}
+          </form>
+
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -3,7 +3,8 @@ import ecommerceImg from '../assets/projects/ecommerce.png';
 import loginImg from '../assets/projects/login.png';
 import internshipImg from '../assets/projects/decodelab.png';
 import devblogImg from '../assets/projects/devblog.png';
-import urlShortenerImg from '../assets/projects/url.png'; // ← Add your image
+import urlShortenerImg from '../assets/projects/url.png';
+import expenseTrackerImg from '../assets/projects/expense-tracker.png'; // ← Add expense tracker image
 
 // Projects data
 export const projectsData = [
@@ -87,6 +88,67 @@ export const projectsData = [
   },
   {
     id: 3,
+    title: "Expense Tracker - Full Stack Application",
+    description: "A comprehensive expense tracking application with income/expense management, budget tracking, and interactive charts. Built with the MERN stack.",
+    extendedDescription: `
+      <h2>Project Overview</h2>
+      <p>A full-stack expense tracker application that helps users manage their finances efficiently. Track income and expenses, set budgets, and visualize spending patterns with beautiful charts.</p>
+      
+      <h2>Key Features</h2>
+      <ul>
+        <li><strong>Add Transactions:</strong> Add income and expense transactions with categories</li>
+        <li><strong>Transaction History:</strong> View all transactions with filters and sorting</li>
+        <li><strong>Budget Management:</strong> Set monthly budgets for different categories</li>
+        <li><strong>Interactive Charts:</strong> Visualize spending with pie charts and bar charts</li>
+        <li><strong>Financial Summary:</strong> View total income, expenses, and balance</li>
+        <li><strong>Category Management:</strong> Create and manage expense categories</li>
+        <li><strong>Dark/Light Mode:</strong> Toggle between themes</li>
+        <li><strong>Data Persistence:</strong> All data stored securely in MongoDB</li>
+      </ul>
+
+      <h2>Tech Stack</h2>
+      <ul>
+        <li><strong>Frontend:</strong> React 18, Vite, Tailwind CSS, Recharts, React Router v6</li>
+        <li><strong>Backend:</strong> Node.js, Express.js, JWT Authentication, bcrypt</li>
+        <li><strong>Database:</strong> MongoDB with Mongoose ODM</li>
+        <li><strong>Charts:</strong> Recharts for interactive data visualization</li>
+        <li><strong>State Management:</strong> React Context API</li>
+      </ul>
+
+      <h2>API Endpoints</h2>
+      <ul>
+        <li><strong>POST /api/transactions:</strong> Add new transaction</li>
+        <li><strong>GET /api/transactions:</strong> Get all transactions</li>
+        <li><strong>GET /api/transactions/:id:</strong> Get single transaction</li>
+        <li><strong>PUT /api/transactions/:id:</strong> Update transaction</li>
+        <li><strong>DELETE /api/transactions/:id:</strong> Delete transaction</li>
+        <li><strong>GET /api/stats:</strong> Get financial statistics</li>
+        <li><strong>GET /api/budgets:</strong> Get budget data</li>
+        <li><strong>POST /api/budgets:</strong> Set budget</li>
+      </ul>
+
+      <h2>What I Learned</h2>
+      <ul>
+        <li>Building complex CRUD operations with MongoDB</li>
+        <li>Implementing data visualization with Recharts</li>
+        <li>Creating responsive dashboards with Tailwind CSS</li>
+        <li>Managing financial data and calculations</li>
+        <li>Implementing dark/light theme toggle</li>
+        <li>Form validation and error handling</li>
+        <li>Real-time data updates and state management</li>
+      </ul>
+
+      <h2>Live Demo</h2>
+      <p>Frontend: http://localhost:5173</p>
+      <p>Backend: http://localhost:5000</p>
+    `,
+    image: expenseTrackerImg,
+    githubLink: "https://github.com/binishfaq/expense-tracker", // Update with your actual repo URL
+    liveLink: "https://your-expense-tracker-demo.com", // Add your live link if deployed
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Recharts", "JWT"]
+  },
+  {
+    id: 4,
     title: "URL Shortener – Full Stack Application",
     description: "A complete URL shortening service built with the MERN stack. Shorten long URLs, track clicks, and manage your links with a beautiful modern interface.",
     extendedDescription: `
@@ -135,11 +197,11 @@ export const projectsData = [
     `,
     image: urlShortenerImg,
     githubLink: "https://github.com/binishfaq/ShorternerUrl",
-    liveLink: "https://your-demo-url.com", // Add your live link if deployed
+    liveLink: "https://your-demo-url.com",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Vite", "Axios", "CSS"]
   },
   {
-    id: 4,
+    id: 5,
     title: "Employee Management System",
     description: "Professional projects and assignments completed during internship at DeCodesLab.",
     extendedDescription: `
@@ -167,7 +229,7 @@ export const projectsData = [
     technologies: ["JavaScript", "React.js"]
   },
   {
-    id: 5,
+    id: 6,
     title: "Login System",
     description: "Secure authentication system with user registration, login, password reset, and session management.",
     extendedDescription: `

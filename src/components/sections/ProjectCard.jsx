@@ -1,47 +1,100 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  FaGithub,
+  FaExternalLinkAlt,
+  FaArrowRight,
+} from "react-icons/fa";
 
 const ProjectCard = ({ project }) => {
   return (
-    <Link to={`/projects/${project.id}`} className="block">
-      <div className="bg-[#ffff] rounded-xl overflow-hidden border border-[#082052]/20 transition-all duration-200 cursor-pointer shadow-[0_2px_8px_rgba(8,32,82,0.05)] hover:border-[#082052] hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(8,32,82,0.12)]">
-        {/* Project Image */}
-        <div className="w-full h-[180px] overflow-hidden bg-[#082052]">
-          <img 
-            src={project.image} 
-            alt={project.title} 
-            className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-          />
-        </div>
-        
-        <div className="p-4 sm:p-5">
-          <h3 className="text-[#082052] text-lg font-bold mb-2 leading-tight line-clamp-1">
-            {project.title}
-          </h3>
-          <p className="text-[#555] text-sm leading-relaxed mb-3 line-clamp-2">
-            {project.description}
-          </p>
-          
-          <div className="flex flex-wrap gap-1.5 mb-3">
-            {project.technologies.slice(0, 3).map((tech, idx) => (
-              <span key={idx} className="bg-[#082052]/10 text-[#082052] px-2 py-0.5 rounded-md text-xs font-medium">
-                {tech}
-              </span>
-            ))}
-            {project.technologies.length > 3 && (
-              <span className="bg-[#082052]/15 text-[#082052] px-2 py-0.5 rounded-md text-xs font-medium">
-                +{project.technologies.length - 3}
-              </span>
-            )}
-          </div>
-          
-          <span className="inline-flex items-center gap-1.5 text-[#082052] text-sm font-semibold transition-all duration-200 hover:gap-2">
-            View Details
-            <span className="transition-transform duration-200">→</span>
+    <div className="group flex h-[360px] flex-col overflow-hidden rounded-2xl border border-slate-700 bg-[#111827] transition-all duration-300 hover:-translate-y-1 hover:border-amber-400">
+
+      {/* Image */}
+      <div className="relative h-36 overflow-hidden">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+        />
+
+        {project.category && (
+          <span className="absolute left-3 top-3 rounded-full bg-amber-400 px-2 py-1 text-[10px] font-semibold text-black">
+            {project.category}
           </span>
-        </div>
+        )}
       </div>
-    </Link>
+
+      {/* Content */}
+      <div className="flex flex-1 flex-col p-4">
+
+        <h3 className="line-clamp-1 text-lg font-semibold text-white">
+          {project.title}
+        </h3>
+
+        <p className="mt-2 line-clamp-2 text-xs leading-5 text-slate-400">
+          {project.description}
+        </p>
+
+        {/* Tech */}
+        <div className="mt-3 flex flex-wrap gap-2">
+          {project.technologies.slice(0, 3).map((tech) => (
+            <span
+              key={tech}
+              className="rounded-full bg-[#0B1220] px-2 py-1 text-[10px] text-slate-300 border border-slate-700"
+            >
+              {tech}
+            </span>
+          ))}
+
+          {project.technologies.length > 3 && (
+            <span className="rounded-full bg-[#0B1220] px-2 py-1 text-[10px] text-slate-400 border border-slate-700">
+              +{project.technologies.length - 3}
+            </span>
+          )}
+        </div>
+
+        {/* Footer */}
+        <div className="mt-auto flex items-center justify-between pt-4">
+
+          <div className="flex gap-3">
+
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="text-slate-400 transition hover:text-amber-400"
+              >
+                <FaGithub size={16} />
+              </a>
+            )}
+
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noreferrer"
+                className="text-slate-400 transition hover:text-amber-400"
+              >
+                <FaExternalLinkAlt size={15} />
+              </a>
+            )}
+
+          </div>
+
+          <Link
+            to={`/projects/${project.id}`}
+            className="flex items-center gap-1 text-xs font-semibold text-amber-400 transition hover:gap-2"
+          >
+            Details
+            <FaArrowRight size={11} />
+          </Link>
+
+        </div>
+
+      </div>
+    </div>
   );
 };
 

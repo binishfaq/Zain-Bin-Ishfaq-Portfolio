@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website showcasing my skills, projects, and experience as a MERN Stack Developer. Built with React, Tailwind CSS, and Vite.
 
-![Portfolio Banner](./public/zain-hero.png)
+![Portfolio Banner](./public/hero.png)
 
 ## 🌐 Live Demo
 

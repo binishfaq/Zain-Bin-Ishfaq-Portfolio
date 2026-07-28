@@ -1,85 +1,183 @@
-import React from 'react';
-import TechStack from '../components/sections/TechStack';
+import React from "react";
+import {
+  FaUser,
+  FaGraduationCap,
+  FaMapMarkerAlt,
+  FaLaptopCode,
+  FaRocket,
+  FaLanguage,
+  FaCheckCircle,
+} from "react-icons/fa";
+import TechStack from "../components/sections/TechStack";
 
 const About = () => {
+  const values = [
+    "Clean & Maintainable Code",
+    "Problem Solving",
+    "Scalable Architecture",
+    "Continuous Learning",
+    "Responsive UI/UX",
+    "Team Collaboration",
+  ];
+
+  const quickFacts = [
+    {
+      icon: <FaUser className="text-amber-400" />,
+      title: "Name",
+      value: "Zain Bin Ishfaq",
+    },
+    {
+      icon: <FaGraduationCap className="text-amber-400" />,
+      title: "Education",
+      value: "BS Information Technology",
+    },
+    {
+      icon: <FaMapMarkerAlt className="text-amber-400" />,
+      title: "Location",
+      value: "Punjab, Pakistan",
+    },
+    {
+      icon: <FaLaptopCode className="text-amber-400" />,
+      title: "Role",
+      value: "Full Stack Developer",
+    },
+    {
+      icon: <FaRocket className="text-amber-400" />,
+      title: "Current Focus",
+      value: "MERN Stack & DevOps",
+    },
+    {
+      icon: <FaLanguage className="text-amber-400" />,
+      title: "Languages",
+      value: "English • Urdu • Punjabi",
+    },
+  ];
+
   return (
-    <div className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 min-h-[70vh] bg-[#ffffff]">
-      <div className="text-center mb-8 md:mb-12">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#082052] to-[#0a2a6e] bg-clip-text text-transparent">
-          About Me
-        </h1>
-        <p className="text-[#666] text-sm sm:text-base mt-2">Get to know me better</p>
-      </div>
+    <section
+      id="about"
+      className="bg-[#0B1220] text-white py-24 px-6"
+    >
+      <div className="max-w-7xl mx-auto">
+        {/* Heading */}
 
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-6 md:gap-8 bg-[#ffff] rounded-2xl p-4 sm:p-6 md:p-10 border border-[#082052]/20">
-          {/* About Text */}
-          <div>
-            <h2 className="text-[#082052] text-xl sm:text-2xl font-bold mb-3 mt-4 first:mt-0">Who am I?</h2>
-            <p className="text-[#555] text-sm sm:text-base leading-relaxed mb-4">
-              I'm Zain Bin Ishfaq, a passionate <span className="text-[#0a2a6e] font-semibold">MERN Stack Developer</span> dedicated to crafting 
-              beautiful, functional, and user-friendly websites. With a keen eye for design 
-              and a love for efficient code, I transform ideas into digital experiences that 
-              make a difference.
+        <div className="text-center mb-16">
+          <span className="uppercase tracking-[6px] text-amber-400 font-semibold">
+            About Me
+          </span>
+
+          <h2 className="text-4xl md:text-5xl font-bold mt-4">
+            Turning Ideas Into
+            <br />
+            Digital Experiences
+          </h2>
+
+          <p className="text-slate-400 max-w-3xl mx-auto mt-6 leading-8">
+            I enjoy building modern web applications that combine
+            clean design, scalable architecture and efficient backend
+            systems to solve real-world problems.
+          </p>
+        </div>
+
+        {/* Content */}
+
+        <div className="grid lg:grid-cols-3 gap-10">
+          {/* Story */}
+
+          <div className="lg:col-span-2 bg-[#111827] border border-slate-700 rounded-3xl p-8">
+
+            <h3 className="text-2xl font-bold mb-6">
+              My Story
+            </h3>
+
+            <p className="text-slate-300 leading-8 mb-6">
+              I'm Zain Bin Ishfaq, a passionate Full Stack Developer
+              currently pursuing a BS in Information Technology.
+              My journey into software development started with
+              curiosity and has grown into a passion for creating
+              secure, responsive and user-focused web applications.
             </p>
 
-            <h2 className="text-[#082052] text-xl sm:text-2xl font-bold mb-3 mt-4">What I Do?</h2>
-            <p className="text-[#555] text-sm sm:text-base leading-relaxed mb-4">
-              I specialize in <span className="text-[#0a2a6e] font-semibold">MERN Stack Development</span> (MongoDB, Express.js, React, Node.js), 
-              building full-stack web applications from concept to deployment. Whether it's a simple 
-              landing page or a complex e-commerce platform, I bring creativity and technical 
-              expertise to every project.
+            <p className="text-slate-300 leading-8 mb-6">
+              I enjoy working across both frontend and backend,
+              transforming ideas into complete digital products.
+              From designing intuitive interfaces to developing
+              REST APIs and integrating databases, I strive to
+              build applications that are efficient, scalable and
+              easy to maintain.
             </p>
 
-            <h2 className="text-[#082052] text-xl sm:text-2xl font-bold mb-3 mt-4">My Journey</h2>
-            <p className="text-[#555] text-sm sm:text-base leading-relaxed">
-              My passion for coding started years ago, and since then I've been constantly 
-              learning and evolving. As a MERN Stack developer, I've worked on various projects 
-              that have helped me master the art of building scalable and efficient web applications.
+            <p className="text-slate-300 leading-8">
+              Beyond coding, I'm continuously learning new
+              technologies such as Docker, DevOps and cloud
+              deployment to become a well-rounded software engineer.
             </p>
+
+            {/* Values */}
+
+            <div className="mt-10">
+
+              <h4 className="text-xl font-semibold mb-5">
+                What Drives Me
+              </h4>
+
+              <div className="grid sm:grid-cols-2 gap-4">
+                {values.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-3 bg-[#0B1220] border border-slate-700 rounded-xl p-4 hover:border-amber-400 transition"
+                  >
+                    <FaCheckCircle className="text-amber-400" />
+
+                    <span className="text-slate-300">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
-          {/* Skills */}
-          <div className="bg-[#082052]/5 rounded-2xl p-4 sm:p-6 border border-[#082052]/15">
-            <h3 className="text-[#082052] text-xl sm:text-2xl font-bold text-center mb-4">MERN Stack Expertise</h3>
-            <div className="flex flex-col gap-4">
-              <div>
-                <h4 className="text-[#0a2a6e] text-base sm:text-lg font-semibold mb-2">Frontend</h4>
-                <ul className="list-none p-0">
-                  <li className="text-[#555] py-1.5 text-sm sm:text-base pl-4 relative before:content-['▹'] before:absolute before:left-0 before:text-[#082052] before:text-sm">React.js</li>
-                  <li className="text-[#555] py-1.5 text-sm sm:text-base pl-4 relative before:content-['▹'] before:absolute before:left-0 before:text-[#082052] before:text-sm">JavaScript (ES6+)</li>
-                  <li className="text-[#555] py-1.5 text-sm sm:text-base pl-4 relative before:content-['▹'] before:absolute before:left-0 before:text-[#082052] before:text-sm">HTML5 & CSS3</li>
-                  <li className="text-[#555] py-1.5 text-sm sm:text-base pl-4 relative before:content-['▹'] before:absolute before:left-0 before:text-[#082052] before:text-sm">Responsive Design</li>
-                </ul>
-              </div>
-              
-              <div>
-                <h4 className="text-[#0a2a6e] text-base sm:text-lg font-semibold mb-2">Backend</h4>
-                <ul className="list-none p-0">
-                  <li className="text-[#555] py-1.5 text-sm sm:text-base pl-4 relative before:content-['▹'] before:absolute before:left-0 before:text-[#082052] before:text-sm">Node.js</li>
-                  <li className="text-[#555] py-1.5 text-sm sm:text-base pl-4 relative before:content-['▹'] before:absolute before:left-0 before:text-[#082052] before:text-sm">Express.js</li>
-                  <li className="text-[#555] py-1.5 text-sm sm:text-base pl-4 relative before:content-['▹'] before:absolute before:left-0 before:text-[#082052] before:text-sm">RESTful APIs</li>
-                  <li className="text-[#555] py-1.5 text-sm sm:text-base pl-4 relative before:content-['▹'] before:absolute before:left-0 before:text-[#082052] before:text-sm">Authentication & Authorization</li>
-                </ul>
-              </div>
-              
-              <div>
-                <h4 className="text-[#0a2a6e] text-base sm:text-lg font-semibold mb-2">Database & Tools</h4>
-                <ul className="list-none p-0">
-                  <li className="text-[#555] py-1.5 text-sm sm:text-base pl-4 relative before:content-['▹'] before:absolute before:left-0 before:text-[#082052] before:text-sm">MongoDB</li>
-                  <li className="text-[#555] py-1.5 text-sm sm:text-base pl-4 relative before:content-['▹'] before:absolute before:left-0 before:text-[#082052] before:text-sm">MySQL</li>
-                  <li className="text-[#555] py-1.5 text-sm sm:text-base pl-4 relative before:content-['▹'] before:absolute before:left-0 before:text-[#082052] before:text-sm">Git & GitHub</li>
-                  <li className="text-[#555] py-1.5 text-sm sm:text-base pl-4 relative before:content-['▹'] before:absolute before:left-0 before:text-[#082052] before:text-sm">VS Code & Postman</li>
-                </ul>
-              </div>
+          {/* Quick Facts */}
+
+          <div className="bg-[#111827] border border-slate-700 rounded-3xl p-8 h-fit sticky top-24">
+
+            <h3 className="text-2xl font-bold mb-8">
+              Quick Facts
+            </h3>
+
+            <div className="space-y-6">
+              {quickFacts.map((fact, index) => (
+                <div
+                  key={index}
+                  className="flex gap-4 border-b border-slate-700 pb-5 last:border-none"
+                >
+                  <div className="text-2xl">
+                    {fact.icon}
+                  </div>
+
+                  <div>
+                    <p className="text-slate-500 text-sm">
+                      {fact.title}
+                    </p>
+
+                    <p className="font-medium mt-1">
+                      {fact.value}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Tech Stack Component */}
-        <TechStack />
+        {/* Tech Stack */}
+
+        <div className="mt-24">
+          <TechStack />
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

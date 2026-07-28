@@ -1,23 +1,35 @@
-import React from 'react';
-import ProjectCard from '../components/sections/ProjectCard';
-import { projectsData } from '../data/portfolioData';
+import React from "react";
+import ProjectCard from "../components/sections/ProjectCard";
+import { projectsData } from "../data/portfolioData";
 
 const Projects = () => {
   return (
-    <div className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 min-h-[70vh] bg-[#ffff]">
-      <div className="text-center mb-8 md:mb-12">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#082052] to-[#0a2a6e] bg-clip-text text-transparent">
-          My Projects
-        </h1>
-        <p className="text-[#666] text-sm sm:text-base mt-2">Here's what I've been building</p>
-      </div>
+    <section id="projects" className="py-24 bg-[#0B1220]">
+      <div className="max-w-7xl mx-auto px-6">
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
-        {projectsData.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
+        <div className="text-center mb-16">
+          <span className="uppercase tracking-[5px] text-amber-400 font-semibold">
+            Portfolio
+          </span>
+
+          <h2 className="text-4xl md:text-5xl font-bold text-white mt-4">
+            Featured Projects
+          </h2>
+
+          <p className="text-slate-400 max-w-2xl mx-auto mt-5">
+            A collection of projects showcasing my experience in
+            frontend, backend, full-stack development and modern web technologies.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+  {projectsData.map((project) => (
+    <ProjectCard key={project.id} project={project} />
+  ))}
+</div>
+
       </div>
-    </div>
+    </section>
   );
 };
 
