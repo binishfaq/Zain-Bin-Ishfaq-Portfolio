@@ -4,7 +4,8 @@ import loginImg from '../assets/projects/login.png';
 import internshipImg from '../assets/projects/decodelab.png';
 import devblogImg from '../assets/projects/devblog.png';
 import urlShortenerImg from '../assets/projects/url.png';
-import expenseTrackerImg from '../assets/projects/expense-tracker.png'; // ← Add expense tracker image
+import expenseTrackerImg from '../assets/projects/expense-tracker.png';
+import ProductCatalogImg from '../assets/projects/product-catalog.png';
 
 // Projects data
 export const projectsData = [
@@ -256,7 +257,65 @@ export const projectsData = [
     image: loginImg,
     githubLink: "https://github.com/binishfaq/login-system-",
     technologies: ["JWT", "BCrypt", "Express", "MongoDB"]
-  }
+  },
+{
+  id: 7,
+  title: "Product Catalog Management System",
+  description:
+    "A full-stack product catalog management system with product and category management, authentication, admin dashboard, image uploads, search, and filtering.",
+
+  extendedDescription: `
+    <h2>Project Overview</h2>
+    <p>
+      A full-stack product catalog management system built with the MERN stack.
+      It provides secure authentication, product and category management,
+      image uploads, search and filtering, and an admin dashboard.
+    </p>
+
+    <h2>Key Features</h2>
+    <ul>
+      <li><strong>Authentication:</strong> JWT-based login, registration, and protected routes</li>
+      <li><strong>Product Management:</strong> Add, edit, delete, and view products</li>
+      <li><strong>Category Management:</strong> Create and manage product categories</li>
+      <li><strong>Admin Dashboard:</strong> Product management and statistics</li>
+      <li><strong>Image Upload:</strong> Product image upload using Multer</li>
+      <li><strong>Search & Filtering:</strong> Search products and filter by category</li>
+    </ul>
+
+    <h2>Tech Stack</h2>
+    <ul>
+      <li><strong>Frontend:</strong> React.js, Vite, Tailwind CSS, Axios</li>
+      <li><strong>Backend:</strong> Node.js, Express.js</li>
+      <li><strong>Database:</strong> MongoDB, Mongoose</li>
+      <li><strong>Authentication:</strong> JWT, bcrypt</li>
+      <li><strong>File Upload:</strong> Multer</li>
+    </ul>
+
+    <h2>What I Learned</h2>
+    <ul>
+      <li>Building RESTful APIs with Express.js</li>
+      <li>Working with MongoDB and Mongoose</li>
+      <li>Implementing JWT authentication and role-based authorization</li>
+      <li>Handling image uploads with Multer</li>
+      <li>Building CRUD operations and admin dashboards</li>
+    </ul>
+  `,
+
+  image: ProductCatalogImg,
+
+  githubLink:
+    "https://github.com/binishfaq/Syntecxhub_Product_Catalog_Management",
+
+  technologies: [
+    "React",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "Tailwind CSS",
+    "JWT",
+    "Multer"
+  ]
+},
 ];
 
 export const socialLinks = [
