@@ -144,8 +144,8 @@ export const projectsData = [
       <p>Backend: http://localhost:5000</p>
     `,
     image: expenseTrackerImg,
-    githubLink: "https://github.com/binishfaq/Expense-Trcaker", // Update with your actual repo URL
-    liveLink: "https://your-expense-tracker-demo.com", // Add your live link if deployed
+    githubLink: "https://github.com/binishfaq/Expense-Trcaker",
+    liveLink: "https://expense-trcaker-1fcu.vercel.app",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Recharts", "JWT"]
   },
   {
