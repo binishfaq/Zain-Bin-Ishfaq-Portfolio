@@ -305,7 +305,7 @@ export const projectsData = [
 
   githubLink:
     "https://github.com/binishfaq/Syntecxhub_Product_Catalog_Management",
-
+  liveLink: "https://syntecxhub-product-catalog-manageme-nu.vercel.app"
   technologies: [
     "React",
     "Node.js",
