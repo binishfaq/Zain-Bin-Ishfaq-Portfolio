@@ -6,8 +6,8 @@ import devblogImg from '../assets/projects/devblog.png';
 import urlShortenerImg from '../assets/projects/url.png';
 import expenseTrackerImg from '../assets/projects/expense-tracker.png';
 import ProductCatalogImg from '../assets/projects/product-catalog.png';
-import employeeManagementImg from "../assets/projects/employee.png"
-
+import employeeManagementImg from "../assets/projects/employee.png";
+import syncChatImg from "../assets/projects/syncchat.png";
 // Projects data
 export const projectsData = [
   {
@@ -216,9 +216,8 @@ export const projectsData = [
     ]
   },
 
-  // #5
   {
-    id: 5,
+    id: 9,
     title: "URL Shortener – Full Stack Application",
     description:
       "A complete URL shortening service built with the MERN stack. Shorten long URLs, track clicks, and manage links through a modern interface.",
@@ -380,7 +379,85 @@ export const projectsData = [
       "JWT",
       "Multer"
     ]
-  }
+  },
+  {
+  id: 5,
+  title: "SyncChat – Real-Time Chat Application",
+  description:
+    "A full-stack real-time chat application with secure authentication, user search, profiles, online status, and instant messaging powered by Socket.IO.",
+  extendedDescription: `
+    <h2>Project Overview</h2>
+    <p>
+      SyncChat is a full-stack real-time messaging application built with
+      the MERN stack. It allows users to securely register, authenticate,
+      find other users, and communicate through real-time messaging.
+    </p>
+
+    <h2>Key Features</h2>
+    <ul>
+      <li><strong>User Authentication:</strong> Secure registration and login</li>
+      <li><strong>JWT Authentication:</strong> Protected API routes and user sessions</li>
+      <li><strong>Real-Time Messaging:</strong> Instant communication using Socket.IO</li>
+      <li><strong>User Search:</strong> Search and find registered users</li>
+      <li><strong>User Profiles:</strong> View and manage profile information</li>
+      <li><strong>Online Status:</strong> Real-time user connection status</li>
+      <li><strong>Chat Management:</strong> Create and manage conversations</li>
+      <li><strong>Responsive UI:</strong> Modern interface for desktop and mobile devices</li>
+    </ul>
+
+    <h2>Tech Stack</h2>
+    <ul>
+      <li><strong>Frontend:</strong> React.js, Vite, Tailwind CSS</li>
+      <li><strong>Backend:</strong> Node.js, Express.js</li>
+      <li><strong>Database:</strong> MongoDB with Mongoose</li>
+      <li><strong>Real-Time Communication:</strong> Socket.IO</li>
+      <li><strong>Authentication:</strong> JWT and bcryptjs</li>
+      <li><strong>API Communication:</strong> Axios</li>
+    </ul>
+
+    <h2>Project Architecture</h2>
+    <ul>
+      <li>React frontend for the user interface</li>
+      <li>Express REST API for backend operations</li>
+      <li>MongoDB for persistent data storage</li>
+      <li>Socket.IO for real-time communication</li>
+      <li>JWT middleware for protected resources</li>
+      <li>Separate frontend and backend architecture</li>
+    </ul>
+
+    <h2>Deployment</h2>
+    <ul>
+      <li><strong>Frontend:</strong> Deployed on Vercel</li>
+      <li><strong>Backend:</strong> Connected through production API</li>
+      <li><strong>Database:</strong> MongoDB Atlas</li>
+    </ul>
+
+    <h2>What I Learned</h2>
+    <ul>
+      <li>Building real-time applications with Socket.IO</li>
+      <li>Implementing JWT authentication</li>
+      <li>Developing RESTful APIs with Express</li>
+      <li>Working with MongoDB and Mongoose</li>
+      <li>Managing real-time user connections</li>
+      <li>Connecting React with a real-time Node.js backend</li>
+      <li>Deploying full-stack applications</li>
+    </ul>
+  `,
+  image: syncChatImg,
+  githubLink:
+    "https://github.com/binishfaq/Syntecxhub_Real_time_chat",
+  liveLink:
+    "https://syncchat-real-time-chat-app.vercel.app/",
+  technologies: [
+    "React",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "Socket.IO",
+    "Tailwind CSS",
+    "JWT"
+  ]
+},
 ];
 
 export const socialLinks = [
