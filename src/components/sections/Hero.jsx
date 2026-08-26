@@ -105,7 +105,7 @@ const Hero = () => {
 
             <div className="flex gap-5 mt-10 text-2xl">
               <a
-                href="https://github.com/zainbinishfaq"
+                href="https://github.com/binishfaq"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-amber-400 transition"
@@ -123,7 +123,7 @@ const Hero = () => {
               </a>
 
               <a
-                href="mailto:your@email.com"
+                href="mailto:zainbinishfaq@gmail.com"
                 className="hover:text-amber-400 transition"
               >
                 <FaEnvelope />
